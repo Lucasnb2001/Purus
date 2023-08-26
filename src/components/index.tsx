@@ -1,0 +1,8 @@
+export {default as HomePage} from "./HomePage"
+export {default as Carousel} from "./Carousel"
+export {default as Book} from "./Book"
+export {default as Card} from "./Card"
+export {default as CarouselProduct} from "./CarouselProduct"
+export {default as NavBar} from "./NavBar"
+export {default as Search} from "./Search"
+export {default as ShoppingCart} from "./ShoppingCart"
