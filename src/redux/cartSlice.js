@@ -25,6 +25,7 @@ export const cartSlice = createSlice({
           );
           // Remove do array
           state.products.splice(index, 1);
+          state.productsNumber = state.productsNumber - 1;
         },
         emptyCart: (state, action) => {
           state.products = []
