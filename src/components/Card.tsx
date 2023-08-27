@@ -5,6 +5,7 @@ interface CardProps{
 }
 
 const Card = ({ title, image, link }: CardProps) => {
+    //Cartão composto por título, imagem e link
     return (
       <div className="h-[420px] bg-white z-30 m-3">
         <div className="text-lg xl:text-xl font-semibold ml-4 mt-4">{title}</div>

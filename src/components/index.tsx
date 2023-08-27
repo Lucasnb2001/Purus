@@ -1,5 +1,5 @@
 export {default as HomePage} from "./HomePage"
-export {default as Carousel} from "./Carousel"
+export {default as Banner} from "./Banner"
 export {default as Book} from "./Book"
 export {default as Card} from "./Card"
 export {default as CarouselProduct} from "./CarouselProduct"

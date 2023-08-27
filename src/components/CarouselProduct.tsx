@@ -1,15 +1,22 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+//import Navigation from "swiper";
+//import { useNavigate, createSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
 import "swiper/css";
 import "swiper/css/navigation";
 
+//Cada produto contém um nome e um preço
 interface CarouselProductProps{
   products: {
     name: string,
     price: number
   }[]
 }
+
+register();
 
 const CarouselProduct = ({products}: CarouselProductProps) => {
   //const name = ["No Plan B", "Guinnes Worls Records 2023", "Simple One Pan Wonders", "The Bullet that Missed", "Interesting Facts for Curious Minds", "It Starts With Us", "Space Boy", "Lessons in Chemistry", "2023 Guide to the Night Sky"]
@@ -41,8 +48,6 @@ const CarouselProduct = ({products}: CarouselProductProps) => {
             <button className="bg-purus-button rounded-xl px-2 pb-1 text-sm">
                 Adicionar ao carrinho
             </button>
-
-            
           </SwiperSlide>
         ))}
       </Swiper>
