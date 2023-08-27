@@ -7,3 +7,8 @@
     --tw-gradient-to: #EAEDED var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+@layer components {
+    .btn {
+      @apply bg-yellow-400 w-full p-3 text-xs xl:text-sm rounded hover:bg-yellow-500 mt-3;
+    }
+  }
