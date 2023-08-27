@@ -1,8 +1,8 @@
 //import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { GB_CURRENCY } from "../utils/constants";
 import { RootState } from "../redux/store";
+import { removeFromCart, emptyCart } from "../redux/cartSlice";
 
 interface produto{
   id: number,
@@ -15,11 +15,11 @@ const Cart = () => {
   const products = useSelector((state: RootState) => state.cart.products);
   const subtotal = useSelector((state: RootState) =>
     state.cart.products.reduce(
-      (subtotal, product) => subtotal + product.price * product.quantity,
+      (subtotal: number, product: produto) => subtotal + product.price * product.quantity,
       0
     )
   );
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <div className="h-screen bg-purus-background">
@@ -46,24 +46,10 @@ const Cart = () => {
                         <div>
                           <button
                             className="text-sm xl:text-base font-semibold rounded text-blue-500 mt-2 mb-1 cursor-pointer"
+                            onClick={() => dispatch(removeFromCart(product.id))}
                           >
-                            Delete
+                            Excluir do carrinnho
                           </button>
-                        </div>
-                        <div className="grid grid-cols-3 w-20 text-center">
-                          <div
-                            className="text-xl xl:text-2xl bg-gray-400 rounded cursor-pointer"
-                          >
-                            -
-                          </div>
-                          <div className="text-lg xl:text-xl bg-gray-200">
-                            {product.quantity}
-                          </div>
-                          <div
-                            className="text-xl xl:text-2xl bg-gray-400 rounded cursor-pointer"
-                          >
-                            +
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -95,7 +81,9 @@ const Cart = () => {
                 R${(subtotal)}
               </span>
             </div>
-            <button className="btn">Proceed to Checkout</button>
+            <Link to={`/Sucess`}>
+              <button onClick={()=>dispatch(emptyCart())} className="btn">Finalizar compra</button>
+            </Link>
           </div>
         </div>
       </div>

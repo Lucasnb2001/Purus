@@ -38,7 +38,7 @@ const CarouselProduct = ({products}: CarouselProductProps) => {
         navigation={true}
         //modules={[Navigation]}
       >
-        {Array.from({ length: 9 }, (_, i) => (
+        {Array.from({ length: 10 }, (_, i) => (
           <SwiperSlide key={i} className="p-6">
             <Link to={`/product/${i}`}>
               <img

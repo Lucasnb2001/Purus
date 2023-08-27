@@ -1,5 +1,4 @@
-import './App.css'
-import {HomePage, NavBar, ShoppingCart} from './components'
+import {HomePage, NavBar, ShoppingCart, Sucess} from './components'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -10,6 +9,7 @@ function App() {
       <Routes>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/cart' element={<ShoppingCart/>}/>
+          <Route path='/sucess' element={<Sucess/>}/>
       </Routes>
       </BrowserRouter>
     </>
